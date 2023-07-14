@@ -5,7 +5,7 @@ import '../styles/PhotoListItem.scss';
 import PhotoFavButton from './PhotoFavButton';
 
 const PhotoListItem = (props) => {
-  const {photo} = props;
+  const {photo, favourites, toggleFavourite} = props;
   console.log(props);
   /* Insert React */
   /*<div className='photo-details'>
@@ -16,7 +16,7 @@ const PhotoListItem = (props) => {
       */
   return (
     <div className='photo-list__item'>
-      <PhotoFavButton />
+      <PhotoFavButton favourites={favourites} toggleFavourite={toggleFavourite} photoId={photo.id}/>
       <img src={photo.urls.regular} alt={`Photo ${photo.id}`} className='photo-list__image' />
       
     </div>
