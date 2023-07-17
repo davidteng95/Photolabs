@@ -5,11 +5,6 @@ import "../styles/PhotoFavButton.scss";
 
 const PhotoFavButton = (props) => {
   const { photoId, toggleFavourite, favourites } = props;
-  // const [isActive, setIsActive] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsActive(!isActive);
-  // };
 
   return (
     <div

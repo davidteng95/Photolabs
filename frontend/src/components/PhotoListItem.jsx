@@ -5,8 +5,6 @@ import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
   const { photo, favourites, toggleFavourite, onPhotoSelect } = props;
-  // console.log("photolistitem", photo);
-  // console.log(props);
   /* Insert React */
   return (
     <div className="photo-list__item">
