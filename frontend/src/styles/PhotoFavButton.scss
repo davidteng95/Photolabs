@@ -14,5 +14,10 @@
 
 .photo-list__fav-icon-svg {
   position: relative;
-  top: 2px;
+  top: 3px;
+  left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // max-width: 100%;
 }
