@@ -45,4 +45,12 @@
 
 .photo-list__user-location {
   color: #838383;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.photo-list__user-info-box {
+ display: flex;
+ flex-direction: column;
 }
