@@ -1,27 +1,63 @@
-import React from "react";
-// import PhotoList from "./components/PhotoList";
-// import PhotoListItem from "./components/PhotoListItem";
+import React, { useState } from "react";
+
 import "./App.scss";
-// import PhotoFavButton from "./components/PhotoFavButton";
-// import TopicList from "./components/TopicList";
-// import topics from "./mocks/topics";
-// import photos from "./mocks/photos";
-// import TopNavigationBar from "./components/TopNavigationBar";
+
+import topics from "./mocks/topics";
+import photos from "./mocks/photos";
 import HomeRoute from "./routes/HomeRoute";
+import PhotoDetailsModal from "./routes/PhotoDetailsModal";
+import useApplicationData from "./hooks/userApplicationData";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
+  const { state, setShowModal, setSelectedPhoto, toggleFavourites } = useApplicationData();
   // const photos = new Array(3).fill("");
+
+  // const [favourites, setFavourites] = useState([]);
+  // console.log("favourites", favourites);
+  // const toggleFavourite = (photoId) => {
+  //   console.log("photoid", photoId, favourites);
+  //   if (favourites.includes(photoId)) {
+  //     //already included
+  //     setFavourites((prev) => prev.filter((photo) => photo !== photoId));
+  //     return;
+  //   }
+  //   // not add
+  //   setFavourites((prev) => {
+  //     return [...prev, photoId];
+  //   });
+  // };
+
+  // const [showModal, setShowModal] = useState(false);
+
+  const closemodal = () => {
+    setShowModal(false);
+  };
+
+  // const [selectedPhoto, setSelectedPhoto] = useState();
+  const selectPhoto = (photo) => {
+    console.log("selectedphoto", photo);
+    setSelectedPhoto(photo);
+    setShowModal(true);
+  };
 
   return (
     <div className="App">
-      <HomeRoute />
-      {/* <TopNavigationBar /> */}
-      {/* <TopicList topics={topics} /> */}
-      {/* <span className="photo-list">
-        {photos.map((photo, index) => (<PhotoListItem key={index} photo={photo} />))}
-      </span> */}
-      {/* <PhotoList /> */}
+      <HomeRoute
+        onPhotoSelect={selectPhoto}
+        favourites={state.favourites}
+        toggleFavourite={toggleFavourites}
+      />
+      {state.showModal && (
+        <PhotoDetailsModal
+          onClose={closemodal}
+          photo={state.selectedPhoto}
+          topics={topics}
+          favourites={state.favourites}
+          toggleFavourite={toggleFavourites}
+          photos={photos}
+        />
+      )}
     </div>
   );
 };
