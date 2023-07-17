@@ -8,12 +8,6 @@ const PhotoListItem = (props) => {
   // console.log("photolistitem", photo);
   // console.log(props);
   /* Insert React */
-  /*<div className='photo-details'>
-        <div className='username'>{props.username}</div>
-        <div className='location'>{props.location.city}, {props.location.country}</div>
-      </div>
-      <img src={props.profile} alt={`${props.username}'s profile`} className='profile-picture' />
-      */
   return (
     <div className="photo-list__item">
       <PhotoFavButton
