@@ -6,8 +6,9 @@ import PhotoList from "../components/PhotoList";
 import PhotoFavButton from "../components/PhotoFavButton";
 
 const PhotoDetailsModal = (props) => {
+  
   const { onClose, photo, favourites, toggleFavourite } = props;
-  console.log("detail", photo);
+
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button" onClick={onClose}>
