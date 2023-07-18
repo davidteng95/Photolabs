@@ -6,7 +6,6 @@ import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 import useApplicationData from "./hooks/userApplicationData";
 
-// Note: Rendering a single component to build components in isolation
 const App = () => {
   const { state, setShowModal, setSelectedPhoto, toggleFavourites } =
     useApplicationData();
@@ -45,7 +44,6 @@ const App = () => {
   };
 
   const selectPhoto = (photo) => {
-    console.log("selectedphoto", photo);
     setSelectedPhoto(photo);
     setShowModal(true);
   };
