@@ -5,7 +5,7 @@ import TopicList from './TopicList';
 import FavBadge from './FavBadge';
 
 const TopNavigationBar = (props) => {
-  // console.log("nav", props);
+
   const isFavPhotoExist = props.favourites.length > 0;
 
   return (
