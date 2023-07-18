@@ -5,7 +5,7 @@ import "../styles/TopicListItem.scss";
 const TopicListItem = (props) => {
   // console.log(props);
   return (
-    <div className="topic-list__item">
+    <div className="topic-list__item" onClick={() => props.setTopic(props.id)}>
       <span>{props.title}</span>
     </div>
   );
