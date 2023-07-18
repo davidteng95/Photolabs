@@ -41,8 +41,10 @@ const PhotoDetailsModal = (props) => {
       </button>
 
       <div className="photo-details-modal__images">
-        <PhotoFavButton favourites={favourites}
-          toggleFavourite={toggleFavourite}/>
+        <PhotoFavButton
+          favourites={favourites}
+          toggleFavourite={toggleFavourite}
+        />
         <img src={photo.urls.full} className="photo-details-modal__image" />
         <div className="photo-list__user-details">
           <img src={photo.user.profile} className="photo-list__user-profile" />
@@ -54,12 +56,12 @@ const PhotoDetailsModal = (props) => {
           </div>
         </div>
         <p className="photo-details-modal__header">Similar Photos</p>
-        <PhotoList
-          photos={Object.values(photo.similarPhotos) || []}
-          favourites={favourites}
-          toggleFavourite={toggleFavourite}
-        />
       </div>
+      <PhotoList
+        photos={Object.values(photo.similar_photos)}
+        favourites={favourites}
+        toggleFavourite={toggleFavourite}
+      />
     </div>
   );
 };
