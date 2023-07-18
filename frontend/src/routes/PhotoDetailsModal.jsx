@@ -45,6 +45,7 @@ const PhotoDetailsModal = (props) => {
         <PhotoFavButton
           favourites={favourites}
           toggleFavourite={toggleFavourite}
+          photoId={photo.id}
         />
         <img src={photo.urls.full} className="photo-details-modal__image" />
         <div className="photo-list__user-details">
