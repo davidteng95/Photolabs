@@ -10,7 +10,6 @@ const reducer = (state, action) => {
   switch (action.type) {
   case 'TOGGLE_FAVOURITES':
     if (state.favourites.includes(action.id)) {
-      //already included
       return {
         ...state,
         favourites: state.favourites.filter((photo) => photo !== action.id)
